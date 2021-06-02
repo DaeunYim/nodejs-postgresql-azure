@@ -1,0 +1,18 @@
+on: [workflow_dispatch]
+true:
+- push
+- workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - uses: azure/postgresql@v1
+      with:
+        connection-string: ${{ secrets.AZURE_POSTGRESQL_CONNECTION_STRING }}
+        plsql-file: POSTGRESQL_FILE_NAME
+        server-name: daeunyim-gh.postgres.database.azure.com
+        sql-file: ./sql/products.sql
