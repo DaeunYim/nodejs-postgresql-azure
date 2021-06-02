@@ -12,4 +12,4 @@ jobs:
         connection-string: ${{ secrets.AZURE_POSTGRESQL_CONNECTION_STRING }}
         plsql-file: POSTGRESQL_FILE_NAME
         server-name: daeunyim-gh.postgres.database.azure.com
-        sql-file: ./sql/products.sql
+        plsql-file: ./sql/products.sql
