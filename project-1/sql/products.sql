@@ -9,3 +9,6 @@ CREATE TABLE customer (
     customerId SERIAL PRIMARY KEY,
     customerName VARCHAR(255) NOT NULL
 );
+
+select 'the lines.';
+\echo BETWEEN
