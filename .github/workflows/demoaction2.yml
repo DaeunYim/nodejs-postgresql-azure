@@ -1,4 +1,4 @@
-on: [workflow_dispatch]
+on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,6 +9,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - uses: azure/postgresql@v1
       with:
-        connection-string: ${{ secrets.AZURE_POSTGRESQL_CONNECTION_STRING }}
-        server-name: daeunyim-gh.postgres.database.azure.com
+        connection-string: ${{ secrets.DAEUNYIM_GH_FLEXIBLESERVERDB_POSTGRESQL_CONNECTION_STRING
+          }}
         plsql-file: ./project-1/sql/products.sql
+        server-name: daeunyim-gh.postgres.database.azure.com
