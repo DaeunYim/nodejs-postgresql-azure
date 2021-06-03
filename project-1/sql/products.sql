@@ -5,11 +5,6 @@ CREATE TABLE products (
     price NUMERIC(5,2)
 );
 
-CREATE TABLE customer (
-    customerId SERIAL PRIMARY KEY,
-    customerName VARCHAR(255) NOT NULL
-);
-
 SELECT *
 FROM pg_catalog.pg_tables
 WHERE schemaname != 'pg_catalog' AND 
